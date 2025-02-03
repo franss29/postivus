@@ -9,7 +9,8 @@ import { Label } from "@/components/ui/label"
 import Image from "next/image"
 
 export default function ContactForm() {
-  const [formType, setFormType] = useState("say-hi")
+  // Hapus formType jika tidak diperlukan
+  // const [formType, setFormType] = useState("say-hi")
 
   return (
     <section className="container mx-auto px-4 py-16">
@@ -25,7 +26,7 @@ export default function ContactForm() {
       <div className="bg-[#F3F3F3] rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-0">
           <div className="space-y-8 relative z-10">
-            <RadioGroup defaultValue="say-hi" onValueChange={setFormType} className="flex gap-8">
+            <RadioGroup defaultValue="say-hi" className="flex gap-8">
               <div className="flex items-center space-x-3">
                 <RadioGroupItem
                   value="say-hi"
@@ -105,4 +106,3 @@ export default function ContactForm() {
     </section>
   )
 }
-

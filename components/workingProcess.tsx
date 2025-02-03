@@ -39,14 +39,13 @@ const steps = [
   },
 ]
 
-
-export default function workingProcess(){
+export default function WorkingProcess() {  // Nama komponen diubah ke huruf kapital
   const [openStep, setOpenStep] = React.useState("01")
-  return(
+  return (
     <section className="container mx-auto px-4 py-16">
       <div className="flex flex-col md:flex-row md:items-center gap-4 mb-12">
         <div className="shrink-0">
-          <h2 className="bg-[#B9FF66] px-4 py-2 text-xl font-medium rounded-md inline-block">Working Procces</h2>
+          <h2 className="bg-[#B9FF66] px-4 py-2 text-xl font-medium rounded-md inline-block">Working Proccess</h2>
         </div>
         <p className="text-[#191A23] text-base md:text-lg lg:text-xl">
           Step-by-Step Guide to Achieving Your Business Goals
