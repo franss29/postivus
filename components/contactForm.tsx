@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -8,6 +9,8 @@ import { Label } from "@/components/ui/label"
 import Image from "next/image"
 
 export default function ContactForm() {
+  const [formType, setFormType] = useState("say-hi")
+
   return (
     <section className="container mx-auto px-4 py-16">
       <div className="flex flex-col md:flex-row md:items-center gap-4 mb-12">
@@ -15,21 +18,33 @@ export default function ContactForm() {
           <h2 className="bg-[#B9FF66] px-4 py-2 text-xl font-medium rounded-md inline-block">Contact Us</h2>
         </div>
         <p className="text-[#191A23] text-base md:text-lg lg:text-xl">
-          Connect with Us: Let&apos;s Discuss Your Digital Marketing Needs {/* Escape tanda kutip tunggal */}
+          Connect with Us: Let's Discuss Your Digital Marketing Needs
         </p>
       </div>
 
       <div className="bg-[#F3F3F3] rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
         <div className="grid lg:grid-cols-2 gap-0">
           <div className="space-y-8 relative z-10">
-            <RadioGroup defaultValue="say-hi" onValueChange={() => {}} className="flex gap-8">
+            <RadioGroup defaultValue="say-hi" onValueChange={setFormType} className="flex gap-8">
               <div className="flex items-center space-x-3">
-                <RadioGroupItem value="say-hi" id="say-hi" className="w-6 h-6" />
-                <Label htmlFor="say-hi" className="text-lg">Say Hi</Label>
+                <RadioGroupItem
+                  value="say-hi"
+                  id="say-hi"
+                  className="w-6 h-6"
+                />
+                <Label htmlFor="say-hi" className="text-lg">
+                  Say Hi
+                </Label>
               </div>
               <div className="flex items-center space-x-3">
-                <RadioGroupItem value="get-quote" id="get-quote" className="w-6 h-6" />
-                <Label htmlFor="get-quote" className="text-lg">Get a Quote</Label>
+                <RadioGroupItem
+                  value="get-quote"
+                  id="get-quote"
+                  className="w-6 h-6"
+                />
+                <Label htmlFor="get-quote" className="text-lg">
+                  Get a Quote
+                </Label>
               </div>
             </RadioGroup>
 
@@ -90,3 +105,4 @@ export default function ContactForm() {
     </section>
   )
 }
+
