@@ -25,7 +25,7 @@ export default function ContactForm() {
                 <RadioGroupItem
                   value="say-hi"
                   id="say-hi"
-                  className="w-6 h-6 border-2 border-[#191A23] before:bg-[#B9FF66] data-[state=checked]:bg-[#B9FF66] data-[state=checked]:border-[#191A23]"
+                  className="w-6 h-6"
                 />
                 <Label htmlFor="say-hi" className="text-lg">
                   Say Hi
@@ -35,7 +35,7 @@ export default function ContactForm() {
                 <RadioGroupItem
                   value="get-quote"
                   id="get-quote"
-                  className="w-6 h-6 border-2 border-[#191A23] before:bg-[#B9FF66] data-[state=checked]:bg-[#B9FF66] data-[state=checked]:border-[#191A23]"
+                  className="w-6 h-6"
                 />
                 <Label htmlFor="get-quote" className="text-lg">
                   Get a Quote
@@ -51,7 +51,7 @@ export default function ContactForm() {
                 <Input
                   id="name"
                   placeholder="Name"
-                  className="rounded-full border-2 border-[#191A23] bg-white h-12 px-6"
+                  className="rounded-md border-[#191A23] bg-white h-12 px-6"
                 />
               </div>
 
@@ -64,7 +64,7 @@ export default function ContactForm() {
                   type="email"
                   placeholder="Email"
                   required
-                  className="rounded-full border-2 border-[#191A23] bg-white h-12 px-6"
+                  className="rounded-md border-[#191A23] bg-white h-12 px-6"
                 />
               </div>
 
@@ -76,11 +76,11 @@ export default function ContactForm() {
                   id="message"
                   placeholder="Message"
                   required
-                  className="min-h-[150px] rounded-[1rem] border-2 border-[#191A23] bg-white px-6 py-4"
+                  className="min-h-[150px] rounded-md border-[#191A23] bg-white px-6 py-4"
                 />
               </div>
 
-              <Button className="w-full bg-[#191A23] text-white hover:bg-[#191A23]/90 rounded-full h-12">
+              <Button className="w-full bg-[#191A23] text-white hover:bg-[#191A23]/90 rounded-md h-12">
                 Send Message
               </Button>
             </form>
@@ -88,7 +88,7 @@ export default function ContactForm() {
 
           <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Illustration%20(6)-fNheAgKX4qNlAzTQsNevrJN6HNFUPq.png"
+              src="/contact-us.png"
               alt="Decorative illustration"
               width={600}
               height={600}
