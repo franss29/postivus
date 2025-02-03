@@ -7,7 +7,7 @@ export default function CallToAction() {
       <div className="bg-gray-100 rounded-[2rem] p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold">Let's make things happen</h2>
+          <h2 className="text-3xl font-bold">Let&apos;s make things happen</h2>
             <p className="text-gray-600">
               Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.
             </p>
