@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label"
 import Image from "next/image"
 
 export default function ContactForm() {
-  const [formType, setFormType] = useState("say-hi")
+  const [_formType, setFormType] = useState("say-hi")
 
   return (
     <section className="container mx-auto px-4 py-16">
