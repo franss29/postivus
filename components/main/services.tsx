@@ -65,13 +65,12 @@ export default function Services() {
             <div className="flex flex-col gap-6">
               <div className="flex justify-between items-start">
                 <div className="bg-[#B9FF66] rounded-md">
-                  <h3
-                    className={`text-base md:text-lg font-medium px-6 py-2 ${
-                      service.background === "bg-[#B9FF66]" ? "bg-white rounded-md" : ""
-                    }`}
-                  >
-                    {service.title}
-                  </h3>
+                <h3 className={`text-base md:text-lg font-medium px-4 md:px-6 py-1 md:py-2 ${
+                    service.background === "bg-[#B9FF66]" ? "bg-white rounded-md" : ""
+                  }`}
+                >
+                  {service.title}
+                </h3>
                 </div>
                 <div className="w-20 h-20 md:w-28 md:h-28">
                   <Image

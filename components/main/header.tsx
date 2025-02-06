@@ -14,9 +14,9 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const links = [
-    { href: "/about-us", label: "About us" },
-    { href: "/services", label: "Services" },
-    { href: "/use-cases", label: "Use Cases" },
+    { href: "/aboutus", label: "About us" },
+    { href: "/servicesprovided", label: "Services" },
+    { href: "/usecases", label: "Use Cases" },
     { href: "/pricing", label: "Pricing" },
     { href: "/blog", label: "Blog" },
   ]
