@@ -47,7 +47,7 @@ export default function PricingFaq() {
     const [openStep, setOpenStep] = React.useState("01")
     
     return (
-        <section className="py-16">
+        <section className="px-4 py-16">
             <div className="space-y-4">
                 <h2 className="bg-[#B9FF66] px-4 py-2 text-xl font-medium rounded-md inline-block mb-12">Frequently Asked Questions</h2>
                 {faqSections.map((faq) => {
