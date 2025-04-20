@@ -92,7 +92,7 @@ export default function Services(){
           </Link>
 
           {/* Card Content */}
-          <div className="bg-[#0D0D0D] text-white rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:space-x-6 py-16">
+          <div className="bg-[#191a23] text-white rounded-[40px] p-8 md:p-12 flex flex-col md:flex-row md:items-center md:space-x-6 py-16">
             {/* Bagian kiri Ikon dan Judul */}
             <div className="flex flex-col md:flex-row md:items-center md:space-x-4 mb-6 md:mb-0 md:w-1/2">
               <Image src="/star.png" width={30} height={30} alt="Star Icon" className="mb-4"/>
