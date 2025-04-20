@@ -45,11 +45,11 @@ export default function Testimonials() {
 
   const goToPrevious = useCallback(() => {
     setCurrentSlide((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
-  }, [])
+  }, [testimonials.length])
 
   const goToNext = useCallback(() => {
     setCurrentSlide((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
-  }, [])
+  }, [testimonials.length])
 
   return (
     <section className="container mx-auto px-4 py-16">
@@ -134,4 +134,3 @@ export default function Testimonials() {
     </section>
   )
 }
-

@@ -19,7 +19,7 @@ const seoProcessSteps = [
   {
     step: "03",
     title: "On-Page Optimization",
-    text: "We optimize your website’s structure, meta tags, and content to make it search engine-friendly, improving your visibility and relevance.",
+    text: "We optimize your website's structure, meta tags, and content to make it search engine-friendly, improving your visibility and relevance.",
     icon: "/Vector (1).png",
   },
   {
@@ -104,7 +104,7 @@ export default function Services(){
             <div className="md:w-2/3">
               <div className="w-full">
                 <p className="text-gray-300 text-lg mb-6 leading-relaxed">
-                  SEO is the process of improving your website's visibility on search engines like Google. By optimizing your content and site structure, we help your business rank higher in search results, driving more organic traffic and potential customers.
+                  SEO is the process of improving your website&apos;s visibility on search engines like Google. By optimizing your content and site structure, we help your business rank higher in search results, driving more organic traffic and potential customers.
                 </p>
                 <button className="w-full bg-white text-black font-md py-3 px-6 rounded-xl hover:bg-gray-200 transition">
                   Boost My Rankings
@@ -173,7 +173,7 @@ export default function Services(){
                     <p className="text-sm mb-4">{item.description}</p>
                     <a href="#" className="text-[#b9FF66] font-medium flex items-center gap-1 group:">
                       Learn more
-                      <img src="/icon/Icon-2.png" alt="arrow icon" className="w-4 h-4 ml-1"/>
+                      <Image src="/icon/Icon-2.png" alt="arrow icon" width={16} height={16} className="ml-1"/>
                     </a>
                   </div>
                 ))}
@@ -189,7 +189,7 @@ export default function Services(){
                 </h2>
                 <hr className="border-t border-[#191A23] w-3/4 md:w-2/3 mb-4" />
                 <p className="text-[#191A23] mb-4">
-                  Our proven SEO strategies are designed to help your business achieve long-lasting success in search engines. Whether you want to boost organic traffic, improve keyword rankings, or increase conversions, we’re here to make it happen.
+                  Our proven SEO strategies are designed to help your business achieve long-lasting success in search engines. Whether you want to boost organic traffic, improve keyword rankings, or increase conversions, we're here to make it happen.
                 </p>
                 <p className="font-semibold text-[#191A23] mb-6">
                   Lets work together to grow your online presence.
@@ -201,7 +201,7 @@ export default function Services(){
 
               {/* Image Section */}
               <div className="flex-1 max-w-md">
-                <img src="/services.jpg" alt="SEO Illustration" className="w-full h-auto" />
+                <Image src="/services.jpg" alt="SEO Illustration" width={500} height={300} className="w-full h-auto" />
               </div>
             </div>
 

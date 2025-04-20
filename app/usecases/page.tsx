@@ -159,7 +159,7 @@ export default function UseCases(){
         <section className="container mx-auto px-4 py-16">
             <div className="bg-[#b9ff66] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between">
               <div className="w-full md:w-1/2 mb-8 md:mb-0">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Create Your Next Success Story</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Create Your Next Success Story</h2>
                 <p className="text-gray-700 text-lg mb-8">
                   Contact us today to learn more about how our digital marketing services can help your business grow and
                   succeed online.
