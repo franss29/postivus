@@ -189,7 +189,7 @@ export default function Services(){
                 </h2>
                 <hr className="border-t border-[#191A23] w-3/4 md:w-2/3 mb-4" />
                 <p className="text-[#191A23] mb-4">
-                  Our proven SEO strategies are designed to help your business achieve long-lasting success in search engines. Whether you want to boost organic traffic, improve keyword rankings, or increase conversions, we're here to make it happen.
+                  Our proven SEO strategies are designed to help your business achieve long-lasting success in search engines. Whether you want to boost organic traffic, improve keyword rankings, or increase conversions, we&apos;re here to make it happen.
                 </p>
                 <p className="font-semibold text-[#191A23] mb-6">
                   Lets work together to grow your online presence.
@@ -209,7 +209,6 @@ export default function Services(){
         </div>
       </main>
       <Footer/>
-        
     </>
   )
 }
