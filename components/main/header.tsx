@@ -7,11 +7,13 @@ import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { QuoteRequestModal } from "@/components/quoteRequestModal" 
 
 export default function Header() {
   const pathname = usePathname()
   const [hoveredLink, setHoveredLink] = useState<string | null>(null)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const links = [
     { href: "/aboutus", label: "About us" },
@@ -66,6 +68,7 @@ export default function Header() {
             <Button
               variant="outline"
               className="rounded-md border-[#191A23] text-[#191A23] hover:bg-[#B9FF66] hover:text-[#191A23] hover:border-[#B9FF66] text-base"
+              onClick={() => setIsModalOpen(true)} 
             >
               Request a quote
             </Button>
@@ -114,7 +117,10 @@ export default function Header() {
               <Button
                 variant="outline"
                 className="rounded-md border-[#191A23] text-[#191A23] hover:bg-[#B9FF66] hover:text-[#191A23] hover:border-[#B9FF66]"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsModalOpen(true)
+                  setIsMenuOpen(false)
+                }}
               >
                 Request a quote
               </Button>
@@ -122,7 +128,13 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </header>
-  );
-}
 
+      {/* ✅ Tambahkan komponen modal-nya di luar div header */}
+      <QuoteRequestModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        selectedPlan="consultation"
+      />
+    </header>
+  )
+}
