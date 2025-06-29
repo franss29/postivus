@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -20,7 +18,6 @@ interface QuoteRequestModalProps {
 }
 
 const socialPlatforms = ["Instagram", "Facebook", "LinkedIn", "TikTok", "Twitter", "Lainnya"]
-
 const businessGoals = [
   "Meningkatkan traffic website",
   "Meningkatkan engagement media sosial",
@@ -30,7 +27,6 @@ const businessGoals = [
   "Ekspansi pasar",
   "Lainnya",
 ]
-
 const industries = [
   "Teknologi",
   "E-commerce",
@@ -74,7 +70,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     try {
@@ -110,7 +106,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
       } else {
         throw new Error("Failed to submit")
       }
-    } catch (error) {
+    } catch {
       toast.error("Terjadi kesalahan", {
         description: "Silakan coba lagi nanti.",
       })
@@ -125,7 +121,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Contact Information */}
+          {/* Informasi Kontak */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Informasi Kontak</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -160,7 +156,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
             </div>
           </div>
 
-          {/* Company Information */}
+          {/* Informasi Perusahaan */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Informasi Perusahaan</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -202,7 +198,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
             </div>
           </div>
 
-          {/* Package Selection */}
+          {/* Pilihan Paket */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Paket yang Diminati</h3>
             <RadioGroup
@@ -228,7 +224,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
             </RadioGroup>
           </div>
 
-          {/* Social Media Platforms */}
+          {/* Platform Media Sosial */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Platform Media Sosial yang Dimiliki</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -237,7 +233,9 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
                   <Checkbox
                     id={platform}
                     checked={formData.socialPlatforms.includes(platform)}
-                    onCheckedChange={(checked) => handleSocialPlatformChange(platform, checked as boolean)}
+                    onCheckedChange={(checked) =>
+                      handleSocialPlatformChange(platform, checked === true)
+                    }
                   />
                   <Label htmlFor={platform}>{platform}</Label>
                 </div>
@@ -245,7 +243,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
             </div>
           </div>
 
-          {/* Business Goals */}
+          {/* Tujuan Utama */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Tujuan Utama</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -254,7 +252,9 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
                   <Checkbox
                     id={goal}
                     checked={formData.businessGoals.includes(goal)}
-                    onCheckedChange={(checked) => handleBusinessGoalChange(goal, checked as boolean)}
+                    onCheckedChange={(checked) =>
+                      handleBusinessGoalChange(goal, checked === true)
+                    }
                   />
                   <Label htmlFor={goal}>{goal}</Label>
                 </div>
@@ -262,7 +262,7 @@ export function QuoteRequestModal({ isOpen, onClose, selectedPlan }: QuoteReques
             </div>
           </div>
 
-          {/* Additional Message */}
+          {/* Pesan Tambahan */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Pesan Tambahan</h3>
             <Textarea

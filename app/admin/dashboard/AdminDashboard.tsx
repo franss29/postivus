@@ -565,7 +565,9 @@ export const AdminDashboard = () => {
                         </Button>
                         <Select
                           value={request.status}
-                          onValueChange={(value) => updateRequestStatus(request.id, value as any)}
+                          onValueChange={(value: "new" | "in-progress" | "completed") =>
+                            updateRequestStatus(request.id, value)
+                          }
                         >
                           <SelectTrigger className="w-32">
                             <SelectValue />
