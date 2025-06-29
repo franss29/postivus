@@ -702,7 +702,9 @@ export const AdminDashboard = () => {
                       <strong>Prioritas:</strong>
                       <Select
                         value={selectedRequest.priority}
-                        onValueChange={(value) => updateRequestPriority(selectedRequest.id, value as any)}
+                        onValueChange={(value: "low" | "medium" | "high") =>
+                          updateRequestPriority(selectedRequest.id, value)
+                        }
                       >
                         <SelectTrigger className="w-32">
                           <SelectValue />
