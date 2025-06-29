@@ -590,7 +590,7 @@ export const AdminDashboard = () => {
 
       {/* Detail Modal */}
       <Dialog open={isDetailModalOpen} onOpenChange={setIsDetailModalOpen}>
-        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-white">
           <DialogHeader>
             <DialogTitle className="flex items-center justify-between">
               <span>Detail Permintaan Quote - {selectedRequest?.id}</span>
@@ -633,7 +633,14 @@ export const AdminDashboard = () => {
                       <strong>Perusahaan:</strong> {selectedRequest.companyName || "-"}
                     </div>
                     <div>
-                      <strong>Website:</strong> {selectedRequest.website || "-"}
+                      <strong>Website:</strong>{" "}
+                      {selectedRequest.website ? (
+                        <a href={selectedRequest.website} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                          {selectedRequest.website}
+                        </a>
+                      ) : (
+                        "-"
+                      )}
                     </div>
                     <div>
                       <strong>Industri:</strong> {selectedRequest.industry}
@@ -642,7 +649,7 @@ export const AdminDashboard = () => {
                 </Card>
               </div>
 
-              {/* Package & Value */}
+              {/* Package & Status */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
                   <CardHeader>
@@ -662,7 +669,7 @@ export const AdminDashboard = () => {
                   <CardHeader>
                     <CardTitle className="text-lg">Status & Prioritas</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
+                  <CardContent className="space-y-4">
                     <div className="flex items-center gap-2">
                       <strong>Status:</strong>
                       <Select
@@ -680,24 +687,8 @@ export const AdminDashboard = () => {
                           <SelectItem value="completed">Selesai</SelectItem>
                         </SelectContent>
                       </Select>
-
-                      <Select
-                        value={selectedRequest.priority}
-                        onValueChange={(value: "low" | "medium" | "high") =>
-                          updateRequestPriority(selectedRequest.id, value)
-                        }
-                      >
-                        <SelectTrigger className="w-32">
-                          <SelectValue />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="low">Rendah</SelectItem>
-                          <SelectItem value="medium">Sedang</SelectItem>
-                          <SelectItem value="high">Tinggi</SelectItem>
-                        </SelectContent>
-                      </Select>
-
                     </div>
+
                     <div className="flex items-center gap-2">
                       <strong>Prioritas:</strong>
                       <Select
@@ -727,11 +718,15 @@ export const AdminDashboard = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {selectedRequest.socialPlatforms.map((platform) => (
-                      <Badge key={platform} variant="outline">
-                        {platform}
-                      </Badge>
-                    ))}
+                    {selectedRequest.socialPlatforms?.length > 0 ? (
+                      selectedRequest.socialPlatforms.map((platform) => (
+                        <Badge key={platform} variant="outline">
+                          {platform}
+                        </Badge>
+                      ))
+                    ) : (
+                      <p className="text-sm text-muted-foreground">Tidak ada platform</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -743,11 +738,15 @@ export const AdminDashboard = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {selectedRequest.businessGoals.map((goal) => (
-                      <Badge key={goal} variant="secondary">
-                        {goal}
-                      </Badge>
-                    ))}
+                    {selectedRequest.businessGoals?.length > 0 ? (
+                      selectedRequest.businessGoals.map((goal) => (
+                        <Badge key={goal} variant="secondary">
+                          {goal}
+                        </Badge>
+                      ))
+                    ) : (
+                      <p className="text-sm text-muted-foreground">Tidak ada tujuan</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -768,11 +767,9 @@ export const AdminDashboard = () => {
 
               {/* Footer Info */}
               <div className="flex justify-between items-center pt-4 border-t">
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Dikirim pada: {new Date(selectedRequest.submittedAt).toLocaleString("id-ID")}
-                  </p>
-                </div>
+                <p className="text-sm text-muted-foreground">
+                  Dikirim pada: {new Date(selectedRequest.submittedAt).toLocaleString("id-ID")}
+                </p>
                 <div className="flex gap-2">
                   <Button variant="outline" onClick={() => setIsDetailModalOpen(false)}>
                     Tutup
@@ -784,6 +781,7 @@ export const AdminDashboard = () => {
           )}
         </DialogContent>
       </Dialog>
+
     </div>
   )
 }
