@@ -667,7 +667,9 @@ export const AdminDashboard = () => {
                       <strong>Status:</strong>
                       <Select
                         value={selectedRequest.status}
-                        onValueChange={(value) => updateRequestStatus(selectedRequest.id, value as any)}
+                        onValueChange={(value: "new" | "in-progress" | "completed") =>
+                          updateRequestStatus(selectedRequest.id, value)
+                        }
                       >
                         <SelectTrigger className="w-32">
                           <SelectValue />
@@ -678,6 +680,23 @@ export const AdminDashboard = () => {
                           <SelectItem value="completed">Selesai</SelectItem>
                         </SelectContent>
                       </Select>
+
+                      <Select
+                        value={selectedRequest.priority}
+                        onValueChange={(value: "low" | "medium" | "high") =>
+                          updateRequestPriority(selectedRequest.id, value)
+                        }
+                      >
+                        <SelectTrigger className="w-32">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="low">Rendah</SelectItem>
+                          <SelectItem value="medium">Sedang</SelectItem>
+                          <SelectItem value="high">Tinggi</SelectItem>
+                        </SelectContent>
+                      </Select>
+
                     </div>
                     <div className="flex items-center gap-2">
                       <strong>Prioritas:</strong>
