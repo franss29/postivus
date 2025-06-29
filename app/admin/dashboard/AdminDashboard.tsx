@@ -177,7 +177,7 @@ const dummyRequests: QuoteRequest[] = [
   },
 ]
 
-export function AdminDashboard() {
+export const AdminDashboard = () => {
   const [requests, setRequests] = useState<QuoteRequest[]>(dummyRequests)
   const [filteredRequests, setFilteredRequests] = useState<QuoteRequest[]>(dummyRequests)
   const [selectedRequest, setSelectedRequest] = useState<QuoteRequest | null>(null)

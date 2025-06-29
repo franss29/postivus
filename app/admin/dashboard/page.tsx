@@ -1,9 +1,8 @@
-import { AdminDashboard } from "@/components/adminDashboard"
+"use client"
+import { AdminDashboard } from "@/app/admin/dashboard/AdminDashboard"
 
-export default function AdminDashboardPage() {
-  return (
-    <div className="min-h-screen bg-background">
-      <AdminDashboard />
-    </div>
-  )
+
+
+export default function DashboardPage() {
+  return <AdminDashboard />
 }
